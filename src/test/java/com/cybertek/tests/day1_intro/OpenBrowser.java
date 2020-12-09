@@ -1,4 +1,4 @@
-package com.cybertek.test.day1_intro;
+package com.cybertek.tests.day1_intro;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ public class OpenBrowser {
         WebDriver driver = new ChromeDriver();
 
 
-        driver.get("https://amazon.com");
+        driver.get("https://cybertekschool.com");
 
 
 
