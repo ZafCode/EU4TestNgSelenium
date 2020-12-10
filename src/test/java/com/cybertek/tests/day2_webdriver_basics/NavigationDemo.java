@@ -33,5 +33,7 @@ public class NavigationDemo {
         //refresh to webpage
         driver.navigate().refresh();
 
+        driver.quit();
+
     }
 }
