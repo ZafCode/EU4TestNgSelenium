@@ -17,10 +17,10 @@ public class verifyConfirmationMessage {
         verify that confirmation message says 'Your e-mail's been sent!'
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //open chrome browser
-        WebDriver driver = WebDriverFactory.getDriver("cHromE");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
 
         //go to http://practice.cybertekschool.com/forgot_password
         driver.get("http://practice.cybertekschool.com/forgot_password");
@@ -33,6 +33,7 @@ public class verifyConfirmationMessage {
         //sendKeys()--> send keyboard action to the webelement
         emailInputBox.sendKeys(expectedEmail);
 
+        Thread.sleep(2000);
 
         //somehow we should get text from web elements
         //two main ways to get txt from web elements
