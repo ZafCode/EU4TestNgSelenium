@@ -48,7 +48,7 @@ public class verifyUrlChanged {
             System.out.println("actualUrl = " + actualUrl);
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //close browser
         driver.quit();
 
