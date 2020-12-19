@@ -9,6 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class OpenBrowser {
 
     public static void main(String[] args) {
+
+        //OPEN BROWSER
 //        //we have to enter this line every time we want to open chrome
 //        //hey webdrivermanager, can you make chrome ready for me for automation
 //        WebDriverManager.chromedriver().setup();
