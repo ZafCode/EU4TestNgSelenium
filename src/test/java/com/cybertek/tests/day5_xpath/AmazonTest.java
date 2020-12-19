@@ -21,6 +21,8 @@ public class AmazonTest {
 
         WebElement searchBox = driver.findElement(By.xpath("(//input[@id='twotabsearchtextbox'])"));
         searchBox.sendKeys("selenium");
+
+        // click search button
         driver.findElement(By.xpath("//input[@value='Go']")).click();
 
         Thread.sleep(3000);
