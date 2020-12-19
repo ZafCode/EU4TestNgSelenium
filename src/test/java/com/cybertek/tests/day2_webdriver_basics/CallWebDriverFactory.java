@@ -8,6 +8,7 @@ public class CallWebDriverFactory {
     public static void main(String[] args) {
 
        WebDriver driver = WebDriverFactory.getDriver("firefox");
+       driver.manage().window().maximize();
 
        driver.get("https://www.google.com");
 
