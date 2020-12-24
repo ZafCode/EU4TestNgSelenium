@@ -28,7 +28,7 @@ Art & Collectibles
         String xPathLocator = "//span[contains(text(),'"+menuName+"')]";
 
 
-
+        Thread.sleep(2000);
         WebElement menu = driver.findElement(By.xpath(xPathLocator));
         menu.click();
 

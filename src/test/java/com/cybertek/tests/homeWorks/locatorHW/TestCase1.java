@@ -16,6 +16,7 @@ print number of results
 
          */
         WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
         driver.get("https://www.ebay.com");
 
         WebElement searchBox = driver.findElement(By.xpath("//*[@type='text']"));
