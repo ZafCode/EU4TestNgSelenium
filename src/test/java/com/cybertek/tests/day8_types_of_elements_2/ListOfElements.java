@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ListOfElements {
     WebDriver driver;
+
     @BeforeMethod
     public void setUP(){
 
