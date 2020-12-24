@@ -44,7 +44,7 @@ public class RadioButtonTest {
 
 
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.quit();
 
     }
