@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class TestCase1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         /*
         Go to Ebay
@@ -26,6 +26,7 @@ print number of results
 
         System.out.println(driver.findElement(By.xpath("//*[@class='srp-controls__count-heading']")).getText());
 
+        Thread.sleep(3000);
         driver.quit();
     }
 }
