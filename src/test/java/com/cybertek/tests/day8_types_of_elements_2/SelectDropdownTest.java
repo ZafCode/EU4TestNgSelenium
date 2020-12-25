@@ -78,6 +78,23 @@ public class SelectDropdownTest {
         actualOption = stateDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals(actualOption,expectedOption, "Verify first selection");
 
+        //2. SELECT USING INDEX
+        Thread.sleep(2000);
+        stateDropdown.selectByIndex(51);
+
+        expectedOption = "Wyoming";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption, expectedOption, "Verify first selection");
+
+        // 3. SELECT USING VALUE
+        Thread.sleep(2000);
+        stateDropdown.selectByValue("TX");
+
+        expectedOption = "Texas";
+        actualOption= stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption,"Verify first selection");
+
+
 
 
     }
