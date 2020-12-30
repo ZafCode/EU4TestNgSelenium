@@ -69,13 +69,16 @@ public class TestCase1_2 {
         checkAllButton.click();
 
         //5. Verify all check boxes are checked
-        WebElement checkAllConfirm = driver.findElement(By.xpath("//input[@value='true']"));
+       // WebElement checkAllConfirm = driver.findElement(By.xpath("//input[@value='true']"));
 
-            if(checkAllConfirm.getAttribute("value").equals("true")){
-            System.out.println("PASS");
-            }else{
-            System.out.println("FAIL");
-            }
+       // List<WebElement> buttons = driver.findElements(By.xpath("//input[@value='true']"))
+        //System.out.println("buttons.size() = " + buttons.size());
+       // Assert.assertEquals(checkAllConfirm.getAttribute("value"), "true", "Verify all check boxes are checked");
+//            if(checkAllConfirm.getAttribute("value").equals("true")){
+//            System.out.println("PASS");
+//            }else{
+//            System.out.println("FAIL");
+//            }
 
 
         //6. Verify button text changed to “Uncheck All”
