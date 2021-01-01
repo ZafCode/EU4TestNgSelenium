@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class ActionsTest {
 
     WebDriver driver;
@@ -46,5 +48,51 @@ public class ActionsTest {
         Assert.assertTrue(viewLink.isDisplayed(),"Verify view link is on the screen");
 
 
+    }
+
+    @Test
+    public void dragAndDrop() throws InterruptedException {
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+
+
+        Actions actions = new Actions(driver);
+
+
+        List<WebElement> acceptAndClose = driver.findElements(By.xpath("//*[.='Accept and Close']"));
+        List<WebElement> acceptCookies = driver.findElements(By.xpath("//*[.='Accept Cookies']"));
+        Thread.sleep(1000);
+        if(acceptAndClose.size()>0){
+            acceptAndClose.get(0).click();
+        }else if(acceptCookies.size()>0){
+            acceptCookies.get(0).click();
+        }
+
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement target = driver.findElement(By.id("droptarget"));
+        actions.dragAndDrop(source,target).perform();
+    }
+
+    @Test
+    public void dragAndDropChaning() throws InterruptedException {
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+
+
+        Actions actions = new Actions(driver);
+
+
+        List<WebElement> acceptAndClose = driver.findElements(By.xpath("//*[.='Accept and Close']"));
+        List<WebElement> acceptCookies = driver.findElements(By.xpath("//*[.='Accept Cookies']"));
+        Thread.sleep(1000);
+        if(acceptAndClose.size()>0){
+            acceptAndClose.get(0).click();
+        }else if(acceptCookies.size()>0){
+            acceptCookies.get(0).click();
+        }
+
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement target = driver.findElement(By.id("droptarget"));
+
+        Thread.sleep(2000);
+        actions.moveToElement(source).clickAndHold().moveToElement(target).pause(2000).release().perform();
     }
 }
