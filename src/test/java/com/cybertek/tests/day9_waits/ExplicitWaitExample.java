@@ -26,7 +26,7 @@ public class ExplicitWaitExample {
     }
 
     @AfterMethod
-    public void tearDown() throws InterruptedException {
+    public void tearDown() {
         //Thread.sleep(2000);
         driver.quit();
     }
