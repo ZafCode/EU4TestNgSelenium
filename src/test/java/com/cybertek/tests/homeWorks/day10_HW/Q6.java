@@ -72,7 +72,7 @@ Step 13. Verify that subject is: “Thanks for subscribing to practice.cyberteks
 
         //Step 10. Verify that you’ve received an email from “do-not-reply@practice.cybertekschool.com”
         driver.switchTo().defaultContent();
-        String actualEmail = driver.findElement(By.xpath("//span[contains(text(), 'do-not')]")).getText();
+        String actualEmail = driver.findElement(By.xpath("//span[contains(text(),'do-not')]")).getText();
         String expectedEmail = "do-not-reply@practice.cybertekschool.com";
         Assert.assertEquals(actualEmail, expectedEmail, "Verify that you've received an email from");
 

@@ -20,6 +20,7 @@ public class Q9_12 {
         driver = WebDriverFactory.getDriver("Chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.get("https://practice-cybertekschool.herokuapp.com");
     }
     @AfterMethod
     public void tearDown() {
@@ -31,19 +32,20 @@ public class Q9_12 {
     public Object[][] getData() {
 
         Object[][] data = {
-                {"https://practice-cybertekschool.herokuapp.com","Status Codes","200","//*[contains(text(),'returned')]"},
-                {"https://practice-cybertekschool.herokuapp.com","Status Codes","301","//*[contains(text(),'returned')]"},
-                {"https://practice-cybertekschool.herokuapp.com","Status Codes","404","//*[contains(text(),'returned')]"},
-                {"https://practice-cybertekschool.herokuapp.com","Status Codes","500","//*[contains(text(),'returned')]"},
+                {"Status Codes","200","//*[contains(text(),'returned')]"},
+                {"Status Codes","301","//*[contains(text(),'returned')]"},
+                {"Status Codes","404","//*[contains(text(),'returned')]"},
+                {"Status Codes","500","//*[contains(text(),'returned')]"},
         };
 
         return data;
 
     }
     @Test(dataProvider = "data-provider")
-    public void test( String data1, String data2, String data3, String data4) {
+    public void test( String data2, String data3, String data4) {
         //Step 1. Go to “https://practice-cybertekschool.herokuapp.com”
-        driver.get(data1);
+        // NOV INSIDE THE BEFORE METHOD
+        //driver.get(data1);
 
         //Step 2. And click on “Status Codes”.
         driver.findElement(By.linkText(data2)).click();
