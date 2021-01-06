@@ -28,10 +28,6 @@ public class HoverTest {
     }
 
 
-    /**
-     * hover over each image in the website
-     * verify each name:user text is displayed
-     */
 
     @Test
     public void oneImage() throws InterruptedException {
@@ -69,9 +65,9 @@ public class HoverTest {
             actions.moveToElement(img).perform();
 
             String textXpath = "//h5[.='name: user" + i + "']";
-            WebElement text1 = driver.findElement(By.xpath(textXpath));
+            WebElement text = driver.findElement(By.xpath(textXpath));
             System.out.println(textXpath);
-            Assert.assertTrue(text1.isDisplayed(), "verify user " + i + " is displayed");
+            Assert.assertTrue(text.isDisplayed(), "verify user " + i + " is displayed");
 
         }
     }
