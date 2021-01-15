@@ -17,7 +17,7 @@ public class AnotherTest extends TestBase {
         String password = ConfigurationReader.get("driver_password");
 
         driver.findElement(By.id("prependedInput")).sendKeys(username);
-        driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.TAB);
+        driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.ENTER);
 
     }
 }
