@@ -1,4 +1,4 @@
-/*package com.cybertek.tests.day15_review;
+package com.cybertek.tests.day15_review;
 
 import com.cybertek.pages.ContactInfoPage;
 import com.cybertek.pages.ContactsPage;
@@ -21,7 +21,7 @@ public class verifyContactInfoTest extends TestBase {
      * verify that phone number is +18982323434
      */
 
-    /*
+
     @Test
     public void contactDetailsTest(){
 
@@ -64,4 +64,4 @@ public class verifyContactInfoTest extends TestBase {
     }
 
 
-}*/
+}
