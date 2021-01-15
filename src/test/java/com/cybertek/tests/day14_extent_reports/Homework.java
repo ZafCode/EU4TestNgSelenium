@@ -53,7 +53,7 @@ public class Homework extends TestBase {
         driver.findElement(By.xpath("//td[text()='mbrackstone9@example.com'][@data-column-label='Email']")).click();
 
         extentLogger.info("verify that full name is Mariam Brackstone");
-        Assert.assertEquals(driver.findElement(By.className("user-name")).getText(),"Mariam Brackstone","verify that full name is Mariam Brackstone");
+        Assert.assertEquals(driver.findElement(By.xpath("//h1[@class='user-name']")).getText(),"Mariam Brackstone","verify that full name is Mariam Brackstone");
 
         extentLogger.info("verify that email is mbrackstone9@example.com");
         driver.findElement(By.partialLinkText("mbrackstone9@example.com")).getText().contains("mbrackstone9@example.com");
