@@ -49,7 +49,7 @@ public class NegativeLoginTestWithReport extends TestBase {
         extentLogger.info("Verify the page url");
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa1.vytrack.com/user/login");
 
-        extentLogger.info("Wrong username test is passed");
+        extentLogger.info("PASSED");
     }
 
 }
