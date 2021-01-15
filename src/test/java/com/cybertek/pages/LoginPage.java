@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class LoginPage {
+public class LoginPage extends TestBase{
 
     public LoginPage() {
 
@@ -58,6 +58,7 @@ public class LoginPage {
     }
 
     public void loginAsSalesManager(){
+
         String username = ConfigurationReader.get("salesmanager_username");
         String password = ConfigurationReader.get("salesmanager_password");
         usernameInput.sendKeys(username);
