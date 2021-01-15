@@ -18,6 +18,9 @@ import org.testng.annotations.Test;
  * verify that email is mbrackstone9@example.com
  * verify that phone number is +18982323434
  */
+
+// Day 15'teki ÇÖZÜME BAAAAAK
+
 public class Homework extends TestBase {
     @Test
     public void test(){
@@ -25,7 +28,10 @@ public class Homework extends TestBase {
         extentLogger= report.createTest("Sales Manager Test");
         LoginPage loginPage = new LoginPage();
 
-        extentLogger.info("Enter username: salesmanager120 - Enter password: UserUser123");
+        extentLogger.info("Enter username: salesmanager120");
+        extentLogger.info("Enter password: UserUser123");
+        extentLogger.info("Login As a Sales Manager");
+        extentLogger.info("Click login button");
         loginPage.loginAsSalesManager();
 
         /*extentLogger.info("Enter username: salesmanager120");
@@ -44,7 +50,7 @@ public class Homework extends TestBase {
 
         extentLogger.info("click on email mbrackstone9@example.com");
         dashboardPage.waitUntilLoaderScreenDisappear();
-        driver.findElement(By.xpath("//table/tbody/tr[2]")).click();
+        driver.findElement(By.xpath("//td[text()='mbrackstone9@example.com'][@data-column-label='Email']")).click();
 
         extentLogger.info("verify that full name is Mariam Brackstone");
         Assert.assertEquals(driver.findElement(By.className("user-name")).getText(),"Mariam Brackstone","verify that full name is Mariam Brackstone");
