@@ -25,14 +25,17 @@ public class Homework extends TestBase {
         extentLogger= report.createTest("Sales Manager Test");
         LoginPage loginPage = new LoginPage();
 
-        extentLogger.info("Enter username: salesmanager120");
+        extentLogger.info("Enter username: salesmanager120 - Enter password: UserUser123");
+        loginPage.loginAsSalesManager();
+
+        /*extentLogger.info("Enter username: salesmanager120");
         loginPage.usernameInput.sendKeys("salesmanager120");
 
         extentLogger.info("Enter password: UserUser123");
         loginPage.passwordInput.sendKeys("UserUser123");
 
         extentLogger.info("Click Login button");
-        loginPage.loginBtn.click();
+        loginPage.loginBtn.click();*/
 
         DashboardPage dashboardPage = new DashboardPage();
         dashboardPage.waitUntilLoaderScreenDisappear();
