@@ -1,8 +1,3 @@
-/target/test-classes/com/cybertek/tests/day4_basic_locators/classNameTest.class
-/target/test-classes/com/cybertek/tests/day4_basic_locators/IDLocatorTest.class
-/target/test-classes/com/cybertek/tests/day4_basic_locators/linkTextandPartialLinkText.class
-/target/test-classes/com/cybertek/tests/day4_basic_locators/nameLocatorTest.class
-/target/test-classes/com/cybertek/tests/reviews/Review1.class
-/target/test-classes/com/cybertek/tests/day4_basic_locators/tagNameLocator.class
-/target/test-classes/com/cybertek/tests/day3_webelement_intro/verifyConfirmationMessage.class
-/target/test-classes/com/cybertek/tests/day5_xpath/xPathLocator.class
+.idea/
+target/
+*.iml
