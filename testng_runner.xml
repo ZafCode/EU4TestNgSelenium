@@ -4,8 +4,24 @@
 
     <test name="Vytrack Smoke Test">
         <packages>
-            <package name="com.cybertek.tests.day14_extent_reports"></package>
+            <package name="com.cybertek.tests.day13_pom"></package>
+            <package name="com.cybertek.tests.day11_webtables"></package>
+            <!--Running Packages-->
         </packages>
+        
+        <classes>
+            <class name="com.cybertek.tests.day15_review.verifyContactInfoTest"></class>
+            <class name="com.cybertek.tests.day14_extent_reports.NegativeLoginTestWithReport"></class>
+            <class name="com.cybertek.tests.day11_webtables.WebTablesExample">
+                <!--Running Classes from packages-->
+                <methods>
+                    <include name="getAllHeaders"></include>
+                    <!--Running Methods from a class-->
+                    <exclude name="getRow"></exclude>
+                    <!--Running rest of the Methods from a class except for this method-->
+                </methods>
+            </class>
+        </classes>
     </test>
-
+    
 </suite>
