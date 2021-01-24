@@ -175,13 +175,19 @@ Css selector: table > tr
         calendarEventsPage.selectAllEvents.click();
 
         Thread.sleep(3000);
-        List<WebElement> allRows = driver.findElements(By.xpath("//tbody/tr/td[1]"));
+        List<WebElement> allRows = driver.findElements(By.xpath("//tbody/tr/td/input"));
         System.out.println("allRows.size() = " + allRows.size());
         extentLogger.info("Verify that all calendar events were selected");
 
-            for(int i=1; i<allRows.size();i++){
+        /*for (WebElement allRow : allRows) {
+            System.out.println(allRow.isSelected());
+            Assert.assertTrue(allRow.isSelected());
 
-                WebElement eachFirstCell = driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]"));
+        }*/
+
+           for(int i=1; i<=allRows.size();i++){
+
+                WebElement eachFirstCell = driver.findElement(By.xpath("//tbody/tr["+i+"]/td/input"));
                 Assert.assertTrue(eachFirstCell.isSelected());
             }
 
