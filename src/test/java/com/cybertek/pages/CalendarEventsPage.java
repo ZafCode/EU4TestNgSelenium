@@ -33,6 +33,12 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(xpath = "//tbody/tr[1]")
     public WebElement firstRow;
 
+    @FindBy(xpath = "//div/label[@class='dib'][2]")
+    public WebElement numberOfPages;
+
+    @FindBy(xpath = "//li/input")
+    public WebElement numberOfPageInput;
+
 
 
 }

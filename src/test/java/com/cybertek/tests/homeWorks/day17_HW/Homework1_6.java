@@ -5,6 +5,7 @@ import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -136,15 +137,25 @@ Css selector: table > tr
         String records = calendarEventsPage.numberOfRecords.getText();
         records = records.replace("Total Of ","");
         records= records.replace(" Records","");
-        //int numberOfRecords = Integer.parseInt(records); normalde böyle ama sonuç 4050 çıktığı için static atadım
-        int numberOfRecords=25;
+        int numberOfRecords = Integer.parseInt(records);
 
-        extentLogger.info("Get the number of rows");
-       List<WebElement> numberOfRows = driver.findElements(By.cssSelector("table>tbody>tr"));
-        System.out.println("numberOfRows.size() = " + numberOfRows.size());
+
+        extentLogger.info("Get all the number of rows in all pages");
+        String numberOfPage = calendarEventsPage.numberOfPages.getText();
+        numberOfPage =numberOfPage.replace("Of ","");
+        numberOfPage= numberOfPage.replace(" |","");
+
+        calendarEventsPage.numberOfPageInput.sendKeys(numberOfPage+ Keys.ENTER);
+        Thread.sleep(2000);
+        List<WebElement> numberOfRowsLastPage = driver.findElements(By.cssSelector("table>tbody>tr"));
+        int numberOfTotalRows = ((Integer.parseInt(numberOfPage)-1)*25)+numberOfRowsLastPage.size();
+
+
+        System.out.println("numberOfRowsLastPage.size() = " + numberOfRowsLastPage.size());
+        System.out.println("numberOfTotalRows = " + numberOfTotalRows);
 
         extentLogger.info("Verify that number of calendar events (rows in the table) is equals to number of records");
-        Assert.assertEquals(numberOfRecords, numberOfRows.size(), "Verify number of Rows with number of records");
+        Assert.assertEquals(numberOfRecords, numberOfTotalRows, "Verify number of total Rows with number of records");
 
         extentLogger.info("PASSED");
     }
