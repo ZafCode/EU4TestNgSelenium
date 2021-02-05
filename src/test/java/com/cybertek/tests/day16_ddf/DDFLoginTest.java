@@ -19,7 +19,7 @@ public class DDFLoginTest extends TestBase {
         return dataArray;
     }
 
-    @Test(dataProvider = "userData")
+    @Test(dataProvider = "userData") // For this case dont forget to change url to qa3
     public void test1(String username, String password, String firstName, String lastName){
 
         extentLogger = report.createTest("Test "+firstName+" "+lastName);

@@ -24,7 +24,7 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(xpath = "//div/button[contains(text(), '25')]")
     public WebElement viewPerPage;
 
-    @FindBy(xpath = "//div/label[@class='dib'][3]")
+    @FindBy(xpath = "(//label[@class='dib'])[3]")
     public WebElement numberOfRecords;
 
     @FindBy(xpath = "//thead//input[@type='checkbox']")

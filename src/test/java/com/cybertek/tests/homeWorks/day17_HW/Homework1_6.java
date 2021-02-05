@@ -4,6 +4,7 @@ import com.cybertek.pages.CalendarEventsPage;
 import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
+import com.cybertek.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -127,23 +128,23 @@ Css selector: table > tr
         DashboardPage dashboardPage = new DashboardPage();
         extentLogger.info("Navigate to “Activities -> Calendar Events”");
         dashboardPage.navigateToModule("Activities", "Calendar Events");
-        dashboardPage.waitUntilLoaderScreenDisappear();
+        //dashboardPage.waitUntilLoaderScreenDisappear();
 
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
-
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitForVisibility(calendarEventsPage.numberOfRecords,10);
         extentLogger.info("Get number of records");
         String records = calendarEventsPage.numberOfRecords.getText();
-        records = records.replace("Total Of ","");
-        records= records.replace(" Records","");
+        records = records.replace("Total Of ","").replace(" Records","");
         int numberOfRecords = Integer.parseInt(records);
 
 
         extentLogger.info("Get all the number of rows in all pages");
         String numberOfPage = calendarEventsPage.numberOfPages.getText();
-        numberOfPage =numberOfPage.replace("Of ","");
-        numberOfPage= numberOfPage.replace(" |","");
+        numberOfPage =numberOfPage.replace("Of ","").replace(" |","");
+        //numberOfPage= numberOfPage.replace(" |","");
 
         calendarEventsPage.numberOfPageInput.sendKeys(numberOfPage+ Keys.ENTER);
         Thread.sleep(2000);
@@ -180,12 +181,13 @@ Css selector: table > tr
         dashboardPage.navigateToModule("Activities", "Calendar Events");
         dashboardPage.waitUntilLoaderScreenDisappear();
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         extentLogger.info("Click on the top checkbox to select all");
         calendarEventsPage.selectAllEvents.click();
 
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         List<WebElement> allRows = driver.findElements(By.xpath("//tbody/tr/td/input"));
         System.out.println("allRows.size() = " + allRows.size());
         extentLogger.info("Verify that all calendar events were selected");
@@ -231,6 +233,7 @@ Css selector: table > tr
 
         Thread.sleep(2000);
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         extentLogger.info("Select “Scrum meeting”");
         calendarEventsPage.firstRow.click();
 

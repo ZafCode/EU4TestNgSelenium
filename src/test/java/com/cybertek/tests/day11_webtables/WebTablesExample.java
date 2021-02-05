@@ -64,6 +64,7 @@ public class WebTablesExample {
     public void getRow(){
         //Print the second row information
         WebElement secondRow = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[2]"));
+        //WebElement secondRow = driver.findElement(By.xpath("table[@id='table1']/tbody/tr[2]/td[4]"));
         System.out.println(secondRow.getText());
 
         // Get all Rows dynamically
